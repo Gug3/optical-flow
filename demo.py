@@ -17,14 +17,14 @@ def color_code(flow, maxmag=10):
     return bgr
 
 
-im0 = cv2.imread('frame0.png')
-im1 = cv2.imread('frame1.png')
+im0 = cv2.imread('frame_0.png')
+im1 = cv2.imread('frame_1.png')
 
 im0_g = cv2.cvtColor(im0, cv2.COLOR_RGB2GRAY)
 im1_g = cv2.cvtColor(im1, cv2.COLOR_RGB2GRAY)
 
 #f = pyflow.brox(im0_g / 255., im1_g / 255.)
-f = pyflow.tvl1(im0_g / 255., im1_g / 255., tau = 0.5)
+f = pyflow.tvl1(im0_g / 255., im1_g / 255.)
 cv2.imshow('brox', color_code(f))
 
 cv2.waitKey(0)
